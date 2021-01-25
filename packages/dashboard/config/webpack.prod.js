@@ -7,18 +7,18 @@ const prodConfig = {
   mode: 'production',
   output: {
     filename: '[name].[contenthash].js',
-    publicPath: '/dashboard/latest/',
+    publicPath: '/dashboard/latest/'
   },
   plugins: [
     new ModuleFederationPlugin({
       name: 'dashboard',
       filename: 'remoteEntry.js',
       exposes: {
-        './DashboardApp': './src/bootstrap',
+        './DashboardApp': './src/bootstrap'
       },
-      shared: packageJson.dependencies,
-    }),
-  ],
+      shared: packageJson.dependencies
+    })
+  ]
 };
 
 module.exports = merge(commonConfig, prodConfig);

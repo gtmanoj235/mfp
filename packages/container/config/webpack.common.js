@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
+  devtool: 'eval-source-map',
   module: {
     rules: [
       {
@@ -10,15 +11,15 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             presets: ['@babel/preset-react', '@babel/preset-env'],
-            plugins: ['@babel/plugin-transform-runtime'],
-          },
-        },
-      },
-    ],
+            plugins: ['@babel/plugin-transform-runtime']
+          }
+        }
+      }
+    ]
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './public/index.html',
-    }),
-  ],
+      template: './public/index.html'
+    })
+  ]
 };

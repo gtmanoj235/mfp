@@ -9,7 +9,7 @@ const prodConfig = {
   mode: 'production',
   output: {
     filename: '[name].[contenthash].js',
-    publicPath: '/container/latest/',
+    publicPath: '/container/latest/'
   },
   plugins: [
     new ModuleFederationPlugin({
@@ -19,9 +19,9 @@ const prodConfig = {
         auth: `auth@${domain}/auth/latest/remoteEntry.js`,
         dashboard: `dashboard@${domain}/dashboard/latest/remoteEntry.js`,
       },
-      shared: packageJson.dependencies,
-    }),
-  ],
+      shared: packageJson.dependencies
+    })
+  ]
 };
 
 module.exports = merge(commonConfig, prodConfig);

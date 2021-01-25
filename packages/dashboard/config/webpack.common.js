@@ -3,20 +3,21 @@ const { VueLoaderPlugin } = require('vue-loader');
 module.exports = {
   entry: './src/index.js',
   output: {
-    filename: '[name].[contenthash].js',
+    filename: '[name].[contenthash].js'
   },
   resolve: {
-    extensions: ['.js', '.vue'],
+    extensions: ['.js', '.vue']
   },
+  devtool: 'eval-source-map',
   module: {
     rules: [
       {
         test: /\.(png|jpe?g|gif|woff|svg|eot|ttf)$/i,
-        use: [{ loader: 'file-loader' }],
+        use: [{ loader: 'file-loader' }]
       },
       {
         test: /\.vue$/,
-        use: 'vue-loader',
+        use: 'vue-loader'
       },
       {
         test: /\.scss|\.css$/,
@@ -29,11 +30,11 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             presets: ['@babel/preset-env'],
-            plugins: ['@babel/plugin-transform-runtime'],
-          },
-        },
-      },
-    ],
+            plugins: ['@babel/plugin-transform-runtime']
+          }
+        }
+      }
+    ]
   },
-  plugins: [new VueLoaderPlugin()],
+  plugins: [new VueLoaderPlugin()]
 };

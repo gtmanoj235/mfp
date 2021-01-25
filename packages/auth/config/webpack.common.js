@@ -1,5 +1,6 @@
 module.exports = {
   module: {
+    devtool: 'eval-source-map',
     rules: [
       {
         test: /\.m?js$/,
@@ -8,10 +9,10 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             presets: ['@babel/preset-react', '@babel/preset-env'],
-            plugins: ['@babel/plugin-transform-runtime'],
-          },
-        },
-      },
-    ],
-  },
+            plugins: ['@babel/plugin-transform-runtime']
+          }
+        }
+      }
+    ]
+  }
 };

@@ -12,25 +12,25 @@ const devConfig = {
   devServer: {
     port: 8083,
     historyApiFallback: {
-      index: 'index.html',
+      index: 'index.html'
     },
     headers: {
-      'Access-Control-Allow-Origin': '*',
-    },
+      'Access-Control-Allow-Origin': '*'
+    }
   },
   plugins: [
     new ModuleFederationPlugin({
       name: 'dashboard',
       filename: 'remoteEntry.js',
       exposes: {
-        './DashboardApp': './src/bootstrap',
+        './DashboardApp': './src/bootstrap'
       },
-      shared: packageJson.dependencies,
+      shared: packageJson.dependencies
     }),
     new HtmlWebpackPlugin({
-      template: './public/index.html',
-    }),
-  ],
+      template: './public/index.html'
+    })
+  ]
 };
 
 module.exports = merge(commonConfig, devConfig);
