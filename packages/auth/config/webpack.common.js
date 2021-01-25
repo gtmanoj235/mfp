@@ -1,6 +1,6 @@
 module.exports = {
-  module: {
-    devtool: 'eval-source-map',
+  devtool: 'eval-source-map',
+  module: {    
     rules: [
       {
         test: /\.m?js$/,
